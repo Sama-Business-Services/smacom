@@ -1,9 +1,5 @@
 import unittest
 
-
-from x import msg
-
-
 class TestSum(unittest.TestCase):
     def test_list_int(self):
         """

@@ -1,1 +1,1 @@
-def msg(): print('Hello, World!');
+print('Hello, World!');
