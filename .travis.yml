@@ -1,28 +1,29 @@
 dist: xenial   # required for Python >= 3.7
 language: python
+sudo: required
 python:
   - "3.7"
 virtualenv:
   system_site_packages: true
 
   # command to install dependencies
+addons:
+    apt:
+        packages:
+            - dstat
+before_install:
+    - echo hi
 install:
-  - pip install .
+    - pip install .
 matrix:
   allow_failures:
   - rvm: 1.9.3
-  include:
-  - name: "3.7.3 Production Py"
-    python: "3.7.3"
-    env: TEST_SUITE=suite_3_5_unit
-
 script: ./src/smacli/__init__.py
 
 branches:
   only:
   - master
   - stable
-
 matrix:
   exclude:
   - rvm: 1.9.3
