@@ -1,15 +1,12 @@
 dist: xenial   # required for Python >= 3.7
 language: python
 python:
-  - "3.6"
   - "3.7"
-  - "pypy3.5"
 virtualenv:
   system_site_packages: true
 
   # command to install dependencies
 install:
-  - pip install -r requirements.txt
   - pip install .
 matrix:
   allow_failures:
@@ -18,12 +15,7 @@ matrix:
   - name: "3.7.3 Production Py"
     python: "3.7.3"
     env: TEST_SUITE=suite_3_5_unit
-  - name: "3.5 Integration Tests"
-    python: "3.5"
-    env: TEST_SUITE=suite_3_5_integration
-  - name: "pypy Unit Tests"
-    python: "pypy"
-    env: TEST_SUITE=suite_pypy_unit
+
 script: ./src/smacli/__init__.py
 
 branches:
