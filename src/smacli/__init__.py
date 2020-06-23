@@ -1,3 +1,3 @@
+print('demo/__init__.py executed')
 def main():
-    """Entry point for the application script"""
-    print("Call your main application code here")
+    print('main executed')

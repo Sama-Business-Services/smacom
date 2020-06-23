@@ -1,2 +1,3 @@
-if __name__ == "__main__":
-    
+print('demo/__main__.py executed')
+from __init__ import main
+main()
