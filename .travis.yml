@@ -1,7 +1,6 @@
 dist: bionic
 os: linux
 language: python
-sudo: required
 python:
   - "3.6"
 virtualenv:
@@ -16,7 +15,7 @@ before_install:
     - echo hi
 install:
     - pip3 install .
-matrix:
+jobs:
   allow_failures:
   - rvm: 1.9.3
 script: sudo python3 ./src/smacli/test.py
