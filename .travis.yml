@@ -15,11 +15,11 @@ addons:
 before_install:
     - echo hi
 install:
-    - pip install .
+    - pip3 install .
 matrix:
   allow_failures:
   - rvm: 1.9.3
-script: ./src/smacli/__init__.py
+script: sudo python3 ./src/smacli/test.py
 
 branches:
   only:
