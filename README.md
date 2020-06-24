@@ -44,7 +44,9 @@ clone repo & init env
 export CODECOV_TOKEN="<token>"
 bash <(curl -s https://codecov.io/bash)
 
-
+coverage run ./src/smacli/test.py
+coverage xml
+codecov
 
 
 ```

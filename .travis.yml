@@ -2,11 +2,10 @@ dist: bionic
 os: linux
 language: python
 python:
-  - "3.6"
+  - "3.8"
 virtualenv:
   system_site_packages: true
 
-  # command to install dependencies
 addons:
     apt:
         packages:
@@ -15,6 +14,7 @@ before_install:
     - echo hi
 install:
     - pip3 install .
+    - pip3 install codecov
 jobs:
   allow_failures:
   - rvm: 1.9.3
@@ -25,8 +25,12 @@ jobs:
   - rvm: jruby
     gemfile: gemfiles/Gemfile.rails-2.3.x
     env: ISOLATED=true
-script: sudo python3 ./src/smacli/test.py
-
+script: 
+  - sudo python3 ./src/smacli/test.py
+  - coverage run ./src/smacli/test.py
+# Push the results back to codecov
+after_success:
+  - codecov
 branches:
   only:
   - master
