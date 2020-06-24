@@ -116,7 +116,7 @@ setup(
         # These classifiers are *not* checked by 'pip install'. See instead
         # 'python_requires' below.
         # 'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.6',
 
     ],
 
